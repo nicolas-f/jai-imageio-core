@@ -144,8 +144,6 @@
             <SPI-Consumer>javax.imageio.spi.ServiceRegistry#lookupProviders(java.lang.Class)</SPI-Consumer>
             <Require-Capability>osgi.extender;filter:="(osgi.extender=osgi.serviceloader.registrar)";resolution:=optional</Require-Capability>
             <Provide-Capability>osgi.serviceloader;
-            osgi.serviceloader=java.sql.Driver,
-            osgi.serviceloader;
              osgi.serviceloader=javax.imageio.spi.ImageInputStreamSpi,
             osgi.serviceloader;
              osgi.serviceloader=javax.imageio.spi.ImageReaderSpi,
