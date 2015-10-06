@@ -140,6 +140,17 @@
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Import-Package>*</Import-Package>
             <Export-Package>{local-packages}</Export-Package>
+            <SPI-Provider>javax.imageio.spi.ServiceRegistry</SPI-Provider>
+            <SPI-Consumer>javax.imageio.spi.ServiceRegistry#lookupProviders(java.lang.Class)</SPI-Consumer>
+            <Require-Capability>osgi.extender;filter:="(osgi.extender=osgi.serviceloader.registrar)";resolution:=optional</Require-Capability>
+            <Provide-Capability>osgi.serviceloader;
+            osgi.serviceloader=java.sql.Driver,
+            osgi.serviceloader;
+             osgi.serviceloader=javax.imageio.spi.ImageInputStreamSpi,
+            osgi.serviceloader;
+             osgi.serviceloader=javax.imageio.spi.ImageReaderSpi,
+            osgi.serviceloader;
+             osgi.serviceloader=javax.imageio.spi.ImageWriterSpi</Provide-Capability>
           </instructions>
           <supportedProjectTypes>
             <supportedProjectType>jar</supportedProjectType>
